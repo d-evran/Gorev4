@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Görev 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="cv-title">
+        <h2>CV Hazirlama Araci</h2>
+      </div>
+      <div class="cv-body">
+        <!--LEFT-->
+        <div class="column cv-left">
+          <div class="column-title">
+            <h3>Metin Icerikleri</h3>
+          </div>
+          <hr class="line" />
+          <table>
+            <tr>
+              <td colspan="2"><h4>Isim Kutusu</h4></td>
+            </tr>
+            <tr>
+              <td><label for="adsoyad">Ad Soyad :</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="adsoyad"
+                  name="adsoyad"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="unvan">Ünvan :</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="unvan"
+                  name="unvan"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Iletisim Bilgileri</h4></td>
+            </tr>
+            <tr>
+              <td><label for="telefon">Telefon :</label></td>
+              <td>
+                <input
+                  type="tel"
+                  id="telefon"
+                  name="telefon"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="mail">Mail :</label></td>
+              <td>
+                <input
+                  type="mail"
+                  id="mail"
+                  name="mail"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="web">Web :</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="web"
+                  name="web"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="adres">Adres :</label></td>
+              <td>
+                <textarea
+                  name="adres"
+                  id="adres"
+                  cols="22"
+                  rows="5"
+                  onkeyup="dataBind(this)"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Egitim Bilgileri</h4></td>
+            </tr>
+            <tr>
+              <td><label for="aciklamaEgitim">Aciklama :</label></td>
+              <td>
+                <textarea
+                  name="aciklamaEgitim"
+                  id="aciklamaEgitim"
+                  cols="22"
+                  rows="5"
+                  onkeyup="dataBind(this)"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="okulSayisi">Okul Sayisi :</label></td>
+              <td>
+                <select name="okulSayisi" id="okulSayisi">
+                  <option value="">Seciniz</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="birinciOkul" id="birinci-okul" style="display: none">
+              <td><label for="birinciOkul">1. Okul</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="birinciOkul"
+                  id="birinciOkul"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="birinciOkulAciklama"
+                  placeholder="Aciklama"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr class="ikinciOkul" id="ikinci-okul" style="display: none">
+              <td><label for="ikinciOkul">2. Okul</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="ikinciOkul"
+                  id="ikinciOkul"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="ikinciOkulAciklama"
+                  placeholder="Aciklama"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr class="ucuncuOkul" id="ucuncu-okul" style="display: none">
+              <td><label for="ucuncuOkul">3. Okul</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="ucuncuOkul"
+                  id="ucuncuOkul"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="ucuncuOkulAciklama"
+                  placeholder="Aciklama"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Yetenekler</h4></td>
+            </tr>
+            <tr>
+              <td><label for="aciklamaYetenek">Aciklama :</label></td>
+              <td>
+                <textarea
+                  name="aciklamaYetenek"
+                  id="aciklamaYetenek"
+                  cols="22"
+                  rows="5"
+                  onfocusout="dataBind(this)"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="yetenekSayisi">Yetenek Sayisi :</label></td>
+              <td>
+                <select name="yetenekSayisi" id="yetenekSayisi">
+                  <option value="">Seciniz</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </td>
+            </tr>
+            <tr
+              class="birinciYetenek"
+              id="birinci-yetenek"
+              style="display: none"
+            >
+              <td><label for="birinciYetenek">1. Yetenek</label></td>
+              <td>
+                <input type="text" name="birinciYetenek" id="birinciYetenek" onkeyup="dataBind(this)"/>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="birinciYetenekAciklama"
+                  placeholder="Aciklama"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr class="ikinciYetenek" id="ikinci-yetenek" style="display: none">
+              <td><label for="ikinciYetenek">2. Yetenek</label></td>
+              <td>
+                <input type="text" name="ikinciYetenek" id="ikinciYetenek" onkeyup="dataBind(this)"/>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="ikinciYetenekAciklama"
+                  placeholder="Aciklama"
+                  onkeyup="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Hakkimda</h4></td>
+            </tr>
+            <tr>
+              <td><label for="aciklamaHakkimda">Aciklama :</label></td>
+              <td>
+                <textarea
+                  name="aciklamaHakkimda"
+                  id="aciklamaHakkimda"
+                  cols="22"
+                  rows="5"
+                  onkeyup="dataBind(this)"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Is Deneyimi</h4></td>
+            </tr>
+            <tr>
+              <td><label for="aciklamaIs">Aciklama :</label></td>
+              <td>
+                <textarea
+                  name="aciklamaIs"
+                  id="aciklamaIs"
+                  cols="22"
+                  rows="5"
+                  onkeyup="dataBind(this)"
+                ></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!--MIDDLE-->
+        <div class="column cv-middle">
+          <div class="column-title">
+            <h3>Görünüs</h3>
+          </div>
+          <hr class="line" />
+          <table class="table-left">
+            <tr>
+              <td colspan="2"><h4>Renkler</h4></td>
+            </tr>
+            <tr>
+              <td><label for="arkaplanRenk">Arkaplan Rengi :</label></td>
+              <td>
+                <input type="color" id="arkaplanRenk" name="arkaplanRenk" value="#dd2e2e" oninput="dataBind(this)"/>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="solkolonRenk">Sol Kolon Rengi :</label></td>
+              <td>
+                <input type="color" id="solkolonRenk" name="solkolonRenk" value="#ad1a1a" oninput="dataBind(this)"/>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="isimKutusuRenk">Isim Kutusu Rengi :</label></td>
+              <td>
+                <input type="color" id="isimKutusuRenk" name="isimKutusuRenk" value="#383838" oninput="dataBind(this)"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="isimKutusuYaziRenk">Isim Kutusu Yazi Rengi :</label>
+              </td>
+              <td>
+                <input
+                  type="color"
+                  id="isimKutusuYaziRenk"
+                  name="isimKutusuYaziRenk"
+                  value="#ffffff"
+                  oninput="dataBind(this)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Yazi Tipi</h4></td>
+            </tr>
+            <tr>
+              <td><label for="yaziTipi">Yazi Tipi :</label></td>
+              <td>
+                <select name="yaziTipi" id="yaziTipi">
+                  <option value="">Seciminiz</option>
+                  <option value="1">Times New Roman</option>
+                  <option value="2">Courier New</option>
+                  <option value="3">Lucida Handwriting</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Fotograf</h4></td>
+            </tr>
+            <tr>
+              <td>
+                <label for="cerceveSekli">Fotograf Cercevesi Sekli :</label>
+              </td>
+              <td>
+                <select name="cerceveSekli" id="cerceveSekli">
+                  <option value="">Seciminiz</option>
+                  <option value="1">Köseli</option>
+                  <option value="2">Oval</option>
+                  <option value="3">Yuvarlak</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><h4>Baslik Alti Cizgileri</h4></td>
+            </tr>
+            <tr>
+              <td><label for="cizgiRenk">Cizgi Rengi :</label></td>
+              <td>
+                <input type="color" id="cizgiRenk" name="cizgiRenk" oninput="dataBind(this)"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="cizgiSekli">Cizgi Sekli :</label>
+              </td>
+              <td>
+                <select name="cizgiSekli" id="cizgiSekli">
+                  <option value="">Seciminiz</option>
+                  <option value="1">Noktali</option>
+                  <option value="2">Cizgili</option>
+                  <option value="3">Düz</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!--RIGHT-->
+        <div class="column cv-right" id="cv-right">
+          <!--LEFT COLUMN-->
+          <div class="left-column" id="left-column">
+            <div class="left-column-image" id="left-column-image">FOTOGRAF</div>
+            <div class="left-column-item">
+              <span class="column-title">ILETISIM</span>
+              <div class="left-underline underlines"></div>
+              <ul>
+                <li id="iletisim-telefon"></li>
+                <li id="iletisim-mail"></li>
+                <li id="iletisim-adres"></li>
+                <li id="iletisim-web"></li>
+              </ul>
+            </div>
+            <div class="left-column-item">
+              <span class="column-title">EGITIM</span>
+              <div class="left-underline underlines"></div>
+              <p id="egitim-aciklamaegitim"></p>
+              <ul id="egitimler" style="display: none">
+                <!--EGITIMLER-->
+              </ul>
+            </div>
+            <div class="left-column-item">
+              <span class="column-title">YETENEKLER</span>
+              <div class="left-underline underlines"></div>
+              <p id="yetenek-aciklamaegitim"></p>
+              <ul id="yetenekler" style="display: none">
+                <!--YETENEKLER-->
+              </ul>
+            </div>
+          </div>
+
+          <!--RIGHT COLUMN-->
+          <div class="right-column">
+            <div class="name-box" id="name-box">
+              <div class="name" id="name">{ AD SOYAD }</div>
+              <div class="name-underline" id="name-underline"></div>
+              <div class="unvan" id="unvanad">{ UNVAN }</div>
+            </div>
+            <div class="right-column-body">
+              <div class="body-top">
+                <span class="column-title">HAKKIMDA</span>
+                <div class="right-underline underlines"></div>
+                <p id="about">{ ACIKLAMA }</p>
+              </div>
+              <div class="body-bottom">
+                <span class="column-title">IS DENEYIMI</span>
+                <div class="right-underline underlines"></div>
+                <p id="work">{ ACIKLAMA }</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
